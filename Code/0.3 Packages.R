@@ -50,7 +50,8 @@ install_load(c("rio",
                "ggridges",
                "tableone",
                "MASS",
-               "pscl"
+               "pscl",
+               "dplyr"
                ))
 
 
