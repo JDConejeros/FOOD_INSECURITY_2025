@@ -330,6 +330,8 @@ glimpse(table_fig_reg)
 
 #### Scatter -----
 
+cor.test(table_fig_reg$prevalence_if, table_fig_reg$prevalence_oc, method = "spearman")
+
 zone_colors <- c(
   "North" = "#E41A1C",         # Red
   "Central" = "#FF7F00",       # Orange 
