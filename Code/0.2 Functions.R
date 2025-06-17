@@ -1,7 +1,5 @@
 # Functions ----
 
-## Descriptives ----
-
 descriptives <- function(x, data){
   data %>% 
     dplyr::select({{ x }}) %>%    

@@ -3,7 +3,7 @@
 ## Settings ----
 source("Code/0.1 Settings.R")
 source("Code/0.2 Functions.R")
-source("Code/0.3 Packages.R")
+verify_packages()  # Verify and load required packages
 
 # Data path 
 data_inp <- "Input/"
@@ -36,7 +36,28 @@ casen <- casen |>
     age >= 25 & age <= 44 ~ "25-44",
     age >= 45 & age <= 64 ~ "45-64",
     age >= 65 ~ "65+"
-  ))
+  )) |> 
+  mutate(age_group = factor(age_group, levels = c("18-24", "25-44", "45-64", "65+"))) |> 
+  mutate(qaut = factor(qaut, levels = c(1:5), labels = c("Q1 Lowest", "Q2", "Q3", "Q4", "Q5 Highest"))) |> 
+  mutate(reg = factor(reg, levels = c(1:16),
+                      labels = c(
+                        "1 Región de Tarapacá",
+                        "2 Región de Antofagasta",
+                        "3 Región de Atacama",
+                        "4 Región de Coquimbo",
+                        "5 Región de Valparaíso",
+                        "6 Región del Libertador Gral. Bernardo O'Higgins",
+                        "7 Región del Maule",
+                        "8 Región del Biobío",
+                        "9 Región de La Araucanía",
+                       "10 Región de Los Lagos",
+                       "11 Región de Aysén del Gral. Carlos Ibáñez del Campo",
+                       "12 Región de Magallanes y de la Antártica Chilena",
+                       "13 Región Metropolitana de Santiago",
+                       "14 Región de Los Ríos",
+                       "15 Región de Arica y Parinacota",
+                       "16 Región de Ñuble"
+                        )))
 
 ## Principal Predictor: Overcrowding ---- 
 
@@ -155,7 +176,7 @@ casen <- casen |>
     food_insecurity_score = rowSums(across(r8a:r8h), na.rm = TRUE)
   )
 
-alpha(casen[, c("r8a", "r8b", "r8c", "r8d", "r8e", "r8f", "r8g", "r8h")]) # 0.87
+psych::alpha(casen[, c("r8a", "r8b", "r8c", "r8d", "r8e", "r8f", "r8g", "r8h")]) # 0.87
 
 ## Select sample ----
 
@@ -248,3 +269,4 @@ casen_full <- casen_full |>
 # Save data ---------
 glimpse(casen_full)
 save(casen_full, file=paste0(data_inp, "casen_2022_process", ".RData"))
+

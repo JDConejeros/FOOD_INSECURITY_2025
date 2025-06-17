@@ -3,7 +3,6 @@
 ## Settings ----
 source("Code/0.1 Settings.R")
 source("Code/0.2 Functions.R")
-source("Code/0.3 Packages.R")
 
 # Data path 
 data_inp <- "Input/"
@@ -93,7 +92,7 @@ for (y in outcomes) {
 # Save results
 model_list 
 names(model_list) <- gsub("~", "", names(model_list))
-write_xlsx(model_list, path = "Output/Logit_models_weight.xlsx")
+writexl::write_xlsx(model_list, path = "Output/Logit_models_weight.xlsx")
 
 ####  With complex desing model ----
 
@@ -119,11 +118,11 @@ run_logistic_model <- function(data, outcome, exposure,
   tidy(model, conf.int = TRUE, conf.level = 0.95,  exponentiate = TRUE) |>
     filter(term != "(Intercept)") |>
     mutate(
-      OR      = exp(estimate),
-      CI_low  = exp(conf.low),
-      CI_high = exp(conf.high)
+      OR      = estimate,
+      CI_low  = conf.low,
+      CI_high = conf.high
     ) |>
-    select(term, estimate, std.error, OR, CI_low, CI_high, p.value)
+    select(term, estimate, std.error, conf.low, conf.high, p.value)
 }
 
 # Lista para guardar modelos
@@ -148,5 +147,5 @@ for (y in outcomes) {
 # Save results
 model_list_svy
 names(model_list_svy) <- gsub("~", "", names(model_list_svy))
-write_xlsx(model_list_svy, path = "Output/Logit_models_svy.xlsx")
+writexl::write_xlsx(model_list_svy, path = "Output/Logit_models_svy.xlsx")
 
