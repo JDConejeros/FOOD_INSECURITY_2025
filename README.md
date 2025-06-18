@@ -1,7 +1,7 @@
 # Food insecurity and overcrowding: The concurrence between two social determinants of health in Urban Chilean households 
 
 **Authors**: 
-Gabriel González Medina$^1$, Leslie Landaeta-Díaz$^{2,3}$, Francisco Vergara-Perucich$^4$, José Daniel Conejeros$^{5,6}$
+Gabriel González Medina<sup>1</sup>, Leslie Landaeta-Díaz<sup>2,3</sup>, Francisco Vergara-Perucich<sup>4</sup>, José Daniel Conejeros<sup>5,6</sup>
 
 1 Facultad de Medicina. Departamento de Salud Pública, Pontificia Universidad Católica de Chile, Chile. Gagonzalez1@uc.cl https://orcid.org/0000-0001-8241-3076
 
