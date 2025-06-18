@@ -17,6 +17,8 @@ required_packages <- c(
   "car",          # Companion to Applied Regression
   "pROC",         # ROC curves
   "ResourceSelection", # Hosmer-Lemeshow test
+  "MASS",          # Binomial negative models 
+  "pscl",          # Zero inflated models
   
   # Output
   "openxlsx",     # Excel files

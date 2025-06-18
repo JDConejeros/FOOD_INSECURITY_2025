@@ -91,7 +91,7 @@ run_count_models <- function(data, outcome, exposure,
       std.error = `Std. Error`,
       p.value = `Pr(>|z|)`
     ) |>
-    select(term, estimate, std.error, IRR, CI_low, CI_high, p.value)
+    dplyr::select(term, estimate, std.error, IRR, CI_low, CI_high, p.value)
   
   list(
     poisson = broom::tidy(model_pois, conf.int = TRUE, conf.level = 0.95, exponentiate = TRUE) |>
