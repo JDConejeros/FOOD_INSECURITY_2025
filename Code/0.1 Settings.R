@@ -9,4 +9,3 @@ knitr::opts_chunk$set("ft.shadow" = FALSE)
 # Local figures text
 #Sys.setlocale(category = "LC_ALL", "es_ES.UTF-8") #LAT
 Sys.setlocale(category = "LC_ALL", "en_US.UTF-8") #USA
-

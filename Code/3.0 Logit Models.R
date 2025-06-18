@@ -63,12 +63,7 @@ fit_logistic_tidy <- function(data, outcome, exposure, weight_var) {
   # Extraer resumen con OR directamente
   broom::tidy(model, conf.int = TRUE, conf.level = 0.95, exponentiate = TRUE) |>
     filter(term != "(Intercept)") |>
-    select(term, estimate, std.error, conf.low, conf.high, p.value) |>
-    rename(
-      OR = estimate,
-      CI_low = conf.low,
-      CI_high = conf.high
-    )
+    select(term, estimate, std.error, conf.low, conf.high, p.value) 
 }
 
 model_list <- list()
@@ -116,12 +111,7 @@ run_logistic_model <- function(data, outcome, exposure,
   
   # Resultado tidy + OR manual
   tidy(model, conf.int = TRUE, conf.level = 0.95,  exponentiate = TRUE) |>
-    filter(term != "(Intercept)") |>
-    mutate(
-      OR      = estimate,
-      CI_low  = conf.low,
-      CI_high = conf.high
-    ) |>
+    filter(term != "(Intercept)")  |>
     select(term, estimate, std.error, conf.low, conf.high, p.value)
 }
 
