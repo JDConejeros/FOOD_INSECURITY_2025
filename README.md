@@ -1,14 +1,18 @@
 # Food insecurity and overcrowding: The concurrence between two social determinants of health in Urban Chilean households 
 
 **Authors**: 
-Gabriel González Medina1, Leslie Landaeta-Díaz2,3, Francisco Vergara-Perucich4, José Daniel Conejeros5,6
+Gabriel González Medina$^1$, Leslie Landaeta-Díaz$^{2,3}$, Francisco Vergara-Perucich$^4$, José Daniel Conejeros$^{5,6}$
 
 1 Facultad de Medicina. Departamento de Salud Pública, Pontificia Universidad Católica de Chile, Chile. Gagonzalez1@uc.cl https://orcid.org/0000-0001-8241-3076
+
 2 Facultad de Salud y Ciencias Sociales, Universidad de las Américas, Chile. llandaeta@udla.cl https://orcid.org/0000-0001-8970-1150
+
 3 Núcleo de Investigación en Nutrición y Ciencias Alimentarias (NINCAL), Universidad de las Américas, Chile
 4Núcleo Centro Producción del Espacio, Universidad de las Américas, Chile. jvergara@udla.cl https://orcid.org/0000-0002-1930-4691
-5Escuela de Gobierno, Pontificia Universidad Católica de Chile, Santiago, Chile.
-6College UC y Escuela de Salud Pública, Pontificia Universidad Católica de Chile, Santiago, Chile.
+
+5 Escuela de Gobierno, Pontificia Universidad Católica de Chile, Santiago, Chile.
+
+6 College UC y Escuela de Salud Pública, Pontificia Universidad Católica de Chile, Santiago, Chile.
 Autor de correspondencia: Leslie Landaeta-Díaz. Facultad de Salud y Ciencias Sociales. Avenida Walker Martínez 1360, Edificio A. La Florida-Santiago, Chile.
 
 
@@ -18,7 +22,10 @@ Household overcrowding and food insecurity are closely intertwined markers of so
 ## Project Overview
 This repository contains the research project on food insecurity for 2025. The project includes data analysis, statistical modeling, and manuscript preparation.
 
-Question: José Conejeros (jdconejeros@uc.cl)
+For questions or collaboration inquiries, please contact:
+- José Conejeros (Repository Maintainer)
+  - Email: [jdconejeros@uc.cl]
+  - Institution: [Pontificia Universidad Católica de Chile]
 
 ## Repository Structure
 
@@ -110,7 +117,7 @@ If you are a developer working on this project and need to update the package en
    source("Code/3.0 Logit Models.R")
    ```
 
-4. **Count models**
+4. **Count models (poisson and binomial negative)**
    ```R
    source("Code/4.0 Count Models.R")
    ```
@@ -123,6 +130,7 @@ Output/session_info.rds
 ```
 
 To view this information:
+
 ```R
 session_info <- readRDS("Output/session_info.rds")
 print(session_info)
@@ -150,8 +158,3 @@ Common issues and solutions:
 ## License
 This project is licensed under the terms included in the LICENSE file.
 
-## Contact
-For questions or collaboration inquiries, please contact:
-- José Conejeros (Repository Maintainer)
-  - Email: [tu_email]
-  - Institution: [tu_institución]
