@@ -55,8 +55,8 @@ label_list <- list(
     food_insecurity_binary   ~ "FI: Moderate or Severe",
     food_ins1                ~ "FI: Any Level",
     overcrowding             ~ "Overcrowding (continuous)",
-    ind_overcrowding_binary  ~ "FI: Binary Indicator of Overcrowding",
-    overcrowded              ~ "Severely Overcrowded (Binary)",
+    ind_overcrowding_binary  ~ "Binary Indicator of Overcrowding",
+    overcrowded              ~ "Binary Indicator of Severely Overcrowded",
     ind_overcrowding         ~ "Overcrowding Categories (PPB)",
     age_group                ~ "Age Group",
     ethnic                   ~ "Ethnic Identity",
@@ -74,10 +74,10 @@ data_des |>
     food_insecurity_score,
     food_insecurity_binary,
     food_ins1,
-    overcrowding,
-    ind_overcrowding_binary,
-    overcrowded,
-    ind_overcrowding,
+    overcrowding, # Continuo
+    ind_overcrowding_binary, # Any level 
+    overcrowded, # Severity
+    ind_overcrowding, # Multicategories
     all_of(covariates)
   ) %>%
   tbl_summary(
@@ -107,8 +107,8 @@ label_list <- list(
   #food_insecurity_score ~ "Food Insecurity Score",
   #food_ins1 ~ "FI Any Level (Score ≥ 1)",
   overcrowding ~ "Overcrowding (People per Bedroom)",
-  ind_overcrowding_binary ~ "Critical Overcrowding (Binary)",
-  overcrowded ~ "Overcrowded Household (Binary)",
+  ind_overcrowding_binary  ~ "Binary Indicator of Overcrowding",
+  overcrowded              ~ "Binary Indicator of Severely Overcrowded",
   ind_overcrowding ~ "Overcrowding Level (Categorical)"
 )
 
